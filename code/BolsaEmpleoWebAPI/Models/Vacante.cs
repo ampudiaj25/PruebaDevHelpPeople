@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BolsaEmpleoWebAPI.Models;
 
@@ -18,6 +19,6 @@ public partial class Vacante
     public decimal Salario { get; set; }
 
     public bool Estado { get; set; }
-
+    [JsonIgnore]
     public virtual ICollection<Postulacione> Postulaciones { get; set; } = new List<Postulacione>();
 }

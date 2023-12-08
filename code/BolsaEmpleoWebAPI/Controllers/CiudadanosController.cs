@@ -11,11 +11,11 @@ namespace BolsaEmpleoWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CiudadanoController : ControllerBase
+    public class CiudadanosController : ControllerBase
     {
         private readonly BolsaEmpleoDbContext _context;
 
-        public CiudadanoController(BolsaEmpleoDbContext context)
+        public CiudadanosController(BolsaEmpleoDbContext context)
         {
             _context = context;
         }
@@ -25,6 +25,15 @@ namespace BolsaEmpleoWebAPI.Controllers
         public async Task<ActionResult<IEnumerable<Ciudadano>>> GetCiudadanos()
         {
             return await _context.Ciudadanos.ToListAsync();
+        }
+
+        // GET: api/Ciudadano
+        [HttpGet("aspirantesPostulacion")]
+        public async Task<ActionResult<IEnumerable<Ciudadano>>> GetAspirantesAPostulacion()
+        {
+            return await _context.Ciudadanos
+                        .Where(ciudadano => !_context.Postulaciones.Any(postulacion => postulacion.CiudadanoId == ciudadano.Id))
+                        .ToListAsync();
         }
 
 

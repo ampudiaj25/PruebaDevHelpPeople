@@ -11,9 +11,9 @@ public partial class Postulacione
 
     public int VacanteId { get; set; }
 
-    public DateTime Fecha { get; set; }
+    public DateTime? Fecha { get; set; }
 
-    public virtual Ciudadano Ciudadano { get; set; } = null!;
+    public virtual Ciudadano? Ciudadano { get; set; }
 
-    public virtual Vacante Vacante { get; set; } = null!;
+    public virtual Vacante? Vacante { get; set; }
 }

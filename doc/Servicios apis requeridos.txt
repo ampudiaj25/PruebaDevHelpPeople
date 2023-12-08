@@ -25,7 +25,7 @@ servicios api rest
   "correo": "mati@gmail.com"
 }
 5. eliminar ciudadano por Id (ok)
-6. listar ciudadanos hailitados para aplicar en vacantes
-7. listar vacantes
-8. postular ciudadano en vacante 
+6. listar ciudadanos hailitados para aplicar en vacantes (ok)
+7. listar vacantes (ok)
+8. postular ciudadano en vacante (ok)
  

@@ -66,13 +66,6 @@ public partial class BolsaEmpleoDbContext : DbContext
                 .HasForeignKey(d => d.TipoDocumentoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Ciudadano__tipoD__398D8EEE");
-                //.IsRequired(false);
-
-
-            //entity.HasOne(a => a.TipoDocumento)
-            //    .WithMany()
-            //    .HasForeignKey(a => a.TipoDocumentoId)
-            //    .IsRequired(false);
 
         });
 

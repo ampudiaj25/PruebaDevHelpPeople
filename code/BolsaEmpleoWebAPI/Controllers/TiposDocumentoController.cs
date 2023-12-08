@@ -7,10 +7,10 @@ namespace BolsaEmpleoWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TipoDocumentoController : ControllerBase
+    public class TiposDocumentoController : ControllerBase
     {
         private readonly BolsaEmpleoDbContext _context;
-        public TipoDocumentoController(BolsaEmpleoDbContext context)
+        public TiposDocumentoController(BolsaEmpleoDbContext context)
         {
             this._context = context;
         }

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "rlEr2sbZUqLv8HpNsuF+z/nrwDFSBXmtfuQZSXvt1sw=",
+  "Source": "BolsaEmpleoWebAPI",
+  "BasePath": "_content/BolsaEmpleoWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

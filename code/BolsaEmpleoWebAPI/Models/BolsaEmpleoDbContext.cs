@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace BolsaEmpleoWebAPI.Models;
@@ -13,6 +14,7 @@ public partial class BolsaEmpleoDbContext : DbContext
     public BolsaEmpleoDbContext(DbContextOptions<BolsaEmpleoDbContext> options)
         : base(options)
     {
+        this.ChangeTracker.LazyLoadingEnabled = false; 
     }
 
     public virtual DbSet<Ciudadano> Ciudadanos { get; set; }
@@ -64,6 +66,14 @@ public partial class BolsaEmpleoDbContext : DbContext
                 .HasForeignKey(d => d.TipoDocumentoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Ciudadano__tipoD__398D8EEE");
+                //.IsRequired(false);
+
+
+            //entity.HasOne(a => a.TipoDocumento)
+            //    .WithMany()
+            //    .HasForeignKey(a => a.TipoDocumentoId)
+            //    .IsRequired(false);
+
         });
 
         modelBuilder.Entity<Postulacione>(entity =>

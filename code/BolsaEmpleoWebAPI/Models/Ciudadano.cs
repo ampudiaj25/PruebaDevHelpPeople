@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BolsaEmpleoWebAPI.Models;
 
@@ -22,8 +23,8 @@ public partial class Ciudadano
     public decimal AspiracionSalarial { get; set; }
 
     public string Correo { get; set; } = null!;
-
+    [JsonIgnore]
     public virtual Postulacione? Postulacione { get; set; }
-
-    public virtual TiposDocumento TipoDocumento { get; set; } = null!;
+    [JsonIgnore]
+    public virtual TiposDocumento? TipoDocumento { get; set; }
 }

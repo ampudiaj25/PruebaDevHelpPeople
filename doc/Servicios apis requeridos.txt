@@ -1,10 +1,31 @@
 servicios api rest
 1. listar los tipos de documento (ok)
-2. crear ciudadanos
-3. listar todos los ciudadanos
-4. editar ciudadano por Id
-5. eliminar ciudadano por Id
-6. listar vacantes
-7. listar ciudadanos hailitados para aplicar en vacantes
+2. crear ciudadanos (ok)
+{
+  "tipoDocumentoId": 1,
+  "cedula": "43434",
+  "nombres": "matias",
+  "apellidos": "ampudia",
+  "fechaNacimiento": "2023-12-08",
+  "profesion": "dev",
+  "aspiracionSalarial": 1500000,
+  "correo": "mati@gmail.com"
+}
+3. listar todos los ciudadanos (ok)
+4. editar ciudadano por Id (ok)
+{
+  "id":2,
+  "tipoDocumentoId": 1,
+  "cedula": "43434",
+  "nombres": "matias",
+  "apellidos": "ampudia",
+  "fechaNacimiento": "2023-12-08",
+  "profesion": "dev",
+  "aspiracionSalarial": 1500000,
+  "correo": "mati@gmail.com"
+}
+5. eliminar ciudadano por Id (ok)
+6. listar ciudadanos hailitados para aplicar en vacantes
+7. listar vacantes
 8. postular ciudadano en vacante 
  

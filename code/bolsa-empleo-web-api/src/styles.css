@@ -1,0 +1,60 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos para el encabezado (menú) */
+  header {
+    background-color: #1a237e; /* Azul oscuro */
+    color: white;
+    text-align: right;
+    padding: 10px;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Estilos para el contenido principal */
+  main {
+    padding: 20px;
+  }
+  
+  .selected {
+    background-color: #2979ff; /* Color de fondo para la opción seleccionada */
+    color: #fff; /* Color de texto para la opción seleccionada */
+    font-weight: bold; /* Fuente en negrita para la opción seleccionada */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  }
+  
+  .selected:hover {
+    background-color: #1e5bff; /* Cambio de color al pasar el mouse sobre la opción */
+  }
+  
+  /* toast-styles.css */
+/* toast-styles.css */
+.custom-toast {
+  font-size: 12px;
+  padding: 8px; /* Reducir el espacio interno del toast */
+  width: auto; /* Ajustar el ancho automáticamente */
+}
+/* toast-styles.css */
+.custom-toast {
+  /* Otros estilos previos */
+  top: 50px; /* Posición desde arriba */
+  right: 50px; /* Posición desde la derecha */
+}

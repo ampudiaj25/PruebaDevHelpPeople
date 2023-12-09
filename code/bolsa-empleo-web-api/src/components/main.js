@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Ciudadanos from './ciudadanos/index';
+import ListaCiudadanos from './ciudadanos/list';
 import Vacantes from './vacantes/index';
 
 const Main = () => {
@@ -14,6 +15,9 @@ const Main = () => {
                 <NavLink to="/ciudadanos" className={({isActive}) => isActive ? "selected": "" }>Ciudadanos</NavLink>
               </li>
               <li>
+                <NavLink to="/listaCiudadanos"  className={({isActive}) => isActive ? "selected": "" }>Lista Ciudadanos</NavLink>
+              </li>
+              <li>
                 <NavLink to="/vacantes"  className={({isActive}) => isActive ? "selected": "" }>Vacantes</NavLink>
               </li>
             </ul>
@@ -22,6 +26,7 @@ const Main = () => {
         <main>
           <Routes>
             <Route path="/ciudadanos" element={<Ciudadanos />} />
+            <Route path="/listaCiudadanos" element={<ListaCiudadanos />} />
             <Route path="/vacantes" element={<Vacantes />} />
           </Routes>
         </main>

@@ -25,8 +25,7 @@ const Vacantes = () => {
               <td></td>
               <td></td>
               <td>
-                <button className="btn btn-primary me-2" >Editar</button>
-                <button className="btn btn-danger" >Eliminar</button>
+                <button className="btn btn-primary me-2" >Postular</button>
               </td>
             </tr>
        

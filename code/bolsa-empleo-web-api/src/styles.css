@@ -59,16 +59,3 @@ body {
   right: 50px; /* Posición desde la derecha */
 }
 
-/* Estilo para el borde del input al enfocarse */
-.custom-input {
-  border: 1px solid #ced4da; /* Color del borde predeterminado */
-  padding: 6px 10px; /* Ajusta el relleno según tu preferencia */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Agrega una transición suave al cambio */
-  box-sizing: border-box; /* Conserva el tamaño total del elemento, incluyendo el borde */
-}
-
-.custom-input:focus {
-  border-color: #80bdff; /* Color del borde al enfocarse */
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Efecto de sombra al enfocarse */
-  outline: none; /* Quita el contorno predeterminado */
-}

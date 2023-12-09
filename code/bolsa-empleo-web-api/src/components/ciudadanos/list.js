@@ -7,22 +7,21 @@ const TablaCiudadanos = () => {
     const [editableId, setEditableId] = useState(null);
     const [editedData, setEditedData] = useState({});
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage] = useState(5); // Cambia este valor según el número de registros que quieras mostrar por página
+    const [itemsPerPage] = useState(5);
     const [tiposDocumentos, setTiposDocumentos] = useState([]);
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = ciudadanos.slice(indexOfFirstItem, indexOfLastItem);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await obtenerCiudadanos();
-                const tipos = await obtenerTiposDocumentos();
-                setCiudadanos(data);
-                setTiposDocumentos(tipos);
-            } catch (error) {
-                console.error('Error al obtener los datos:', error);
-            }
+        const obtenerDatos = async () => {
+            const data = await obtenerCiudadanos();
+            const tipos = await obtenerTiposDocumentos();
+            setCiudadanos(data);
+            setTiposDocumentos(tipos.map(tipo => ({ id: tipo.id, nombre: tipo.nombre })));
         };
 
-        fetchData();
+        obtenerDatos();
     }, []);
 
     const handleEliminarCiudadano = async (id) => {
@@ -35,7 +34,7 @@ const TablaCiudadanos = () => {
         }
     };
 
-    const handleEdit = (id, key, value) => {
+    const handleEdit = (id, key, value) => {        
         setEditedData({ ...editedData, [id]: { ...editedData[id], [key]: value } });
     };
 
@@ -64,14 +63,16 @@ const TablaCiudadanos = () => {
         }
     };
 
-    // Lógica para obtener los ciudadanos de la página actual
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = ciudadanos.slice(indexOfFirstItem, indexOfLastItem);
-
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
+
+    const obtenerNombreTipoDocumento = (ciudadano)=>{        
+        const nombre = tiposDocumentos.find(tipo => tipo.id === ciudadano.tipoDocumentoId)
+                                    ?.nombre || ciudadano.tipoDocumentoId
+
+        return nombre;
+    }
 
     return (
         <div className="container mt-5 overflow-auto">
@@ -96,8 +97,9 @@ const TablaCiudadanos = () => {
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <select
+                                        className="form-control"
                                         value={editedData[ciudadano.id]?.tipoDocumentoId || ciudadano.tipoDocumentoId}
-                                        onChange={(e) => handleEdit(ciudadano.id, 'tipoDocumentoId', e.target.value)}
+                                        onChange={(e) => handleEdit(ciudadano.id, 'tipoDocumentoId', parseInt(e.target.value, 10) )}
                                     >
                                         {tiposDocumentos.map((tipo) => (
                                             <option key={tipo.id} value={tipo.id}>
@@ -106,25 +108,16 @@ const TablaCiudadanos = () => {
                                         ))}
                                     </select>
                                 ) : (
-                                    tiposDocumentos.find(tipo => tipo.id === ciudadano.tipoDocumentoId)?.nombre || ciudadano.tipoDocumentoId
+                                    obtenerNombreTipoDocumento(ciudadano)
                                 )}
+                            </td>
+                            <td>
+                                <span>{ciudadano.cedula}</span>
                             </td>
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <input
-                                        value={editedData[ciudadano.id]?.cedula || ciudadano.cedula}
-                                        onChange={(e) => handleEdit(ciudadano.id, 'cedula', e.target.value)}
-                                        disabled={ciudadano.id === editableId}
                                         className="form-control"
-                                    />
-                                ) : (
-                                    ciudadano.cedula
-                                )}
-                            </td>
-                            <td>
-                                {editableId === ciudadano.id ? (
-                                    <input
-                                        className="custom-input"
                                         type="text"
                                         value={editedData[ciudadano.id]?.nombres || ciudadano.nombres}
                                         onChange={(e) => handleEdit(ciudadano.id, 'nombres', e.target.value)}
@@ -136,7 +129,7 @@ const TablaCiudadanos = () => {
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <input
-                                        className="custom-input"
+                                        className="form-control"
                                         type="text"
                                         value={editedData[ciudadano.id]?.apellidos || ciudadano.apellidos}
                                         onChange={(e) => handleEdit(ciudadano.id, 'apellidos', e.target.value)}
@@ -148,7 +141,7 @@ const TablaCiudadanos = () => {
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <input
-                                        className="custom-input"
+                                        className="form-control"
                                         type="date"
                                         value={editedData[ciudadano.id]?.fechaNacimiento || ciudadano.fechaNacimiento}
                                         onChange={(e) => handleEdit(ciudadano.id, 'fechaNacimiento', e.target.value)}
@@ -160,7 +153,7 @@ const TablaCiudadanos = () => {
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <input
-                                        className="custom-input"
+                                        className="form-control"
                                         type="text"
                                         value={editedData[ciudadano.id]?.profesion || ciudadano.profesion}
                                         onChange={(e) => handleEdit(ciudadano.id, 'profesion', e.target.value)}
@@ -172,7 +165,7 @@ const TablaCiudadanos = () => {
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <input
-                                        className="custom-input"
+                                        className="form-control"
                                         type="number"
                                         value={editedData[ciudadano.id]?.aspiracionSalarial || ciudadano.aspiracionSalarial}
                                         onChange={(e) => handleEdit(ciudadano.id, 'aspiracionSalarial', e.target.value)}
@@ -184,7 +177,7 @@ const TablaCiudadanos = () => {
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <input
-                                        className="custom-input"
+                                        className="form-control"
                                         type="email"
                                         value={editedData[ciudadano.id]?.correo || ciudadano.correo}
                                         onChange={(e) => handleEdit(ciudadano.id, 'correo', e.target.value)}
@@ -196,12 +189,15 @@ const TablaCiudadanos = () => {
                             <td>
                                 {editableId === ciudadano.id ? (
                                     <div className="d-flex">
-                                        <button className="btn btn-primary mr-2 flex-fill" onClick={() => handleSaveChanges(ciudadano.id)}>
+                                        <button 
+                                            className="btn btn-primary mt-2 me-2 mr-2 flex-fill" 
+                                            onClick={() => handleSaveChanges(ciudadano.id)}
+                                        >
                                             Guardar
                                         </button>
                                         {editableId === ciudadano.id && (
                                             <button
-                                                className="btn btn-danger flex-fill"
+                                                className="btn btn-danger mt-2 mr-2 flex-fill"
                                                 onClick={() => {
                                                     setEditableId(null);
                                                     setEditedData({});
@@ -214,11 +210,11 @@ const TablaCiudadanos = () => {
                                 ) : (
                                     <div className="d-flex">
                                         {editableId !== ciudadano.id && (
-                                            <button className="btn btn-success mr-2 flex-fill" onClick={() => handleEditable(ciudadano.id)}>
+                                            <button className="btn btn-success mt-2 me-2 mr-2 flex-fill" onClick={() => handleEditable(ciudadano.id)}>
                                                 Editar
                                             </button>
                                         )}
-                                        <button className="btn btn-danger ml-2 flex-fill" onClick={() => handleEliminarCiudadano(ciudadano.id)}>
+                                        <button className="btn btn-danger mt-2 mr-2 flex-fill" onClick={() => handleEliminarCiudadano(ciudadano.id)}>
                                             Eliminar
                                         </button>
                                     </div>

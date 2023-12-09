@@ -9,12 +9,8 @@ const Formulario = () => {
 
   useEffect(() => {
     const fetchTiposDocumentos = async () => {
-      try {
-        const data = await obtenerTiposDocumentos();
-        setTiposDocumentos(data); // Establece los tipos de documentos en el estado local
-      } catch (error) {
-        console.error('Error al obtener tipos de documentos:', error);
-      }
+      const data = await obtenerTiposDocumentos();      
+      setTiposDocumentos(data.map(tipo => ({ id: tipo.id, nombre: tipo.nombre }))); 
     };
 
     fetchTiposDocumentos();
@@ -23,6 +19,7 @@ const Formulario = () => {
   const closeSuccessMessage = () => {
     setRegistroExitoso(false);
   };
+
   const onSubmit = async (data) => {
     try {
       const result = await crearCiudadano(data);

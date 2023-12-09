@@ -96,8 +96,8 @@ export const obtenerAspirantesPostulacion = async () => {
 };
 
 export const aplicarVacante = async (data) => {
-  let result = true;  
-  await axios.post(`https://localhost:44318/api/Vacantes?vacanteId=${data.vacanteId}&ciudadadoId=${data.ciudadadoId}`,data)
+  let result = true;    
+  await axios.post(`https://localhost:44318/api/Vacantes`,data)
     .then((response)=> {
       console.log(response);
     })

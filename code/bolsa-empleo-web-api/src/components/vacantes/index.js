@@ -39,12 +39,12 @@ const Vacantes = () => {
 
   const handleAplicar = async () => {
     try {      
-      let ciudadadoId = aspiranteSeleccionado;
-      if(ciudadadoId == null && aspirantes && aspirantes.length === 1){
-        ciudadadoId = aspirantes[0].id;
+      let ciudadanoId = aspiranteSeleccionado;
+      if(ciudadanoId == null && aspirantes && aspirantes.length === 1){
+        ciudadanoId = aspirantes[0].id;
       }
       const data = {
-        ciudadadoId,
+        ciudadanoId,
         vacanteId: vacanteSeleccionada
       };            
       const resultado = await aplicarVacante(data);

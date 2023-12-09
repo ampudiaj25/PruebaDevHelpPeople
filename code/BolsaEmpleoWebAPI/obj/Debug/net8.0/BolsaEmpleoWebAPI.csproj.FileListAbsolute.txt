@@ -1,6 +1,5 @@
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\appsettings.Development.json
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\appsettings.json
-C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\BolsaEmpleoWebAPI.staticwebassets.runtime.json
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\BolsaEmpleoWebAPI.exe
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\BolsaEmpleoWebAPI.deps.json
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\BolsaEmpleoWebAPI.runtimeconfig.json
@@ -240,6 +239,13 @@ C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\Bolsa
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.sourcelink.json
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.csproj.CopyComplete
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.dll
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\refint\BolsaEmpleoWebAPI.dll
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.pdb
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.genruntimeconfig.cache
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\ref\BolsaEmpleoWebAPI.dll
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\BolsaEmpleoWebAPI.staticwebassets.runtime.json
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\staticwebassets.development.json
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\staticwebassets\msbuild.BolsaEmpleoWebAPI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -248,9 +254,6 @@ C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\stati
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BolsaEmpleoWebAPI.props
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\staticwebassets.pack.json
 C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\scopedcss\bundle\BolsaEmpleoWebAPI.styles.css
-C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.csproj.CopyComplete
-C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.dll
-C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\refint\BolsaEmpleoWebAPI.dll
-C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.pdb
-C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\BolsaEmpleoWebAPI.genruntimeconfig.cache
-C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\obj\Debug\net8.0\ref\BolsaEmpleoWebAPI.dll
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\dairo\repos\PruebaDevHelpPeople\code\BolsaEmpleoWebAPI\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

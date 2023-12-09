@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using BolsaEmpleoWebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BolsaEmpleoWebAPI.Models;
 
 namespace BolsaEmpleoWebAPI.Controllers
 {
@@ -28,14 +23,9 @@ namespace BolsaEmpleoWebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostPostulacion(int vacanteId, int ciudadadoId)
+        public async Task<IActionResult> PostPostulacion(Postulacione postulacione)
         {
-            Postulacione postulacione = new()
-            {
-             CiudadanoId = ciudadadoId,
-             VacanteId = vacanteId,
-             Fecha = DateTime.Now
-            };
+            postulacione.Fecha = DateTime.Now;      
             _context.Postulaciones.Add(postulacione);
             await _context.SaveChangesAsync();
 
